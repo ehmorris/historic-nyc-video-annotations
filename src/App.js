@@ -3,6 +3,63 @@ import YouTube from 'react-youtube';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleStateChange = this.handleStateChange.bind(this);
+
+    this.state = {
+      playerTime: 0,
+      title: '',
+      desc: '',
+      lat: 40.71,
+      long: -73.9,
+      zoom: 9.75
+    };
+
+    this.data = [
+      {
+        startTime: 227.07,
+        endTime: 260.36,
+        title: 'Brooklyn Bridge',
+        desc: 'The Brooklyn Bridge used to carry trollies, trains, cars, and pedestrians',
+        lat: 40.7062541,
+        long: -74.0058382,
+        zoom: 12
+      }
+    ];
+  }
+
+  getDataAtPoint(point) {
+    return this.data.find((entry) => {
+      return point > entry.startTime && point < entry.endTime
+    });
+  }
+
+  playFromPoint(point) {
+    const data = this.getDataAtPoint(point);
+
+    if (data) {
+      this.setState({
+        playerTime: point,
+        title: data.title,
+        desc: data.desc,
+        lat: data.lat,
+        long: data.long,
+        zoom: data.zoom,
+      });
+    } else {
+      this.setState({
+        playerTime: point
+      });
+    }
+  }
+
+  handleStateChange({data: state, target: video}) {
+    if (state == 1) {
+      this.playFromPoint(video.getCurrentTime());
+    }
+  }
+
   render() {
     const playerOptions = {
       width: '100%',
@@ -34,8 +91,9 @@ class App extends Component {
           }}
         >
           <YouTube
-            videoId={'VxWHKaylRNM'}
+            videoId={'2LxxoaIa_uk'}
             opts={playerOptions}
+            onStateChange={this.handleStateChange}
           />
         </div>
 
@@ -43,16 +101,18 @@ class App extends Component {
           style={{
             flex: '1',
             minWidth: '35%',
-            position: 'relative'
+            position: 'relative',
+            padding: '90px'
           }}
         >
           <Map
             style='mapbox://styles/mapbox/streets-v9'
-            center={[-73.9, 40.71]}
-            zoom={[9.75]}
+            center={[this.state.long, this.state.lat]}
+            zoom={[this.state.zoom]}
             containerStyle={{
               width: '100%',
-              height: '100%'
+              height: '100%',
+              zIndex: '1'
             }}
           />
 
@@ -64,14 +124,15 @@ class App extends Component {
               right: '2rem',
               background: '#fff',
               border: '2px solid #000',
-              padding: '1rem'
+              padding: '1rem',
+              zIndex: '2'
             }}
           >
-            <pre>
-              Preformatted text
-
-              box
-            </pre>
+            <div>{this.state.playerTime}</div>
+            <div>
+              <div>{this.state.title}</div>
+              <div>{this.state.desc}</div>
+            </div>
           </div>
         </div>
       </div>
