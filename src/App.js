@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   handleStateChange({data: state, target: video}) {
-    if (state == 1) {
+    if (state === 1) {
       this.playFromPoint(video.getCurrentTime());
     }
   }
