@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 
+const Map = ReactMapboxGl({
+  accessToken: process.env.REACT_APP_MAPBOX_TOKEN
+});
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -73,10 +77,6 @@ class App extends Component {
         autoplay: 1
       }
     };
-
-    const Map = ReactMapboxGl({
-      accessToken: process.env.REACT_APP_MAPBOX_TOKEN
-    });
 
     return (
       <div
