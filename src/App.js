@@ -51,8 +51,8 @@ class App extends Component {
             zIndex: '2',
             width: '20vw',
             height: '20vw',
-            bottom: '4rem',
-            left: '1rem'
+            top: '1rem',
+            right: '1rem'
           }}
         >
           <Infobox currentTime={this.state.playerTime} />
