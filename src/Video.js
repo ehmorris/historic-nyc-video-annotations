@@ -28,7 +28,6 @@ class Video extends Component {
   }
 
   emitTime() {
-    console.log('emit time');
     if (this.state.video) {
       this.props.updateTime(this.state.video.getCurrentTime());
     }
