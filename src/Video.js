@@ -6,6 +6,12 @@ class Video extends Component {
     super(props);
 
     this.handleStateChange = this.handleStateChange.bind(this);
+    this.emitTime = this.emitTime.bind(this);
+
+    this.state = {
+      video: null,
+      currentTimeInterval: null
+    };
 
     this.playerOptions = {
       width: '100%',
@@ -21,8 +27,24 @@ class Video extends Component {
     };
   }
 
+  emitTime() {
+    console.log('emit time');
+    if (this.state.video) {
+      this.props.updateTime(this.state.video.getCurrentTime());
+    }
+  }
+
   handleStateChange({data: state, target: video}) {
-    this.props.updateTime(video.getCurrentTime());
+    if (!this.state.video || !this.state.currentTimeInterval) {
+      this.setState({
+        video: video,
+        currentTimeInterval: setInterval(this.emitTime, 250)
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.currentTimeInterval);
   }
 
   render() {
