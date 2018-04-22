@@ -34,14 +34,12 @@ class Infobox extends Component {
     return (
       <div
         style={{
-          position: 'absolute',
-          bottom: '3rem',
-          left: '2rem',
-          right: '2rem',
           background: '#fff',
           border: '2px solid #000',
           padding: '1rem',
-          zIndex: '2'
+          width: '100%',
+          boxSizing: 'border-box',
+          height: '100%'
         }}
       >
         <div>{this.props.currentTime}</div>

@@ -45,8 +45,7 @@ class Map extends Component {
         zoom={[this.state.zoom]}
         containerStyle={{
           width: '100%',
-          height: '100%',
-          zIndex: '1'
+          height: '100%'
         }}
       />
     );

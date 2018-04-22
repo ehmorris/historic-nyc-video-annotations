@@ -20,15 +20,13 @@ class App extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          display: 'flex'
-        }}
-      >
+      <div>
         <div
           style={{
-            width: '131.45vh',
-            height: '100vh'
+            width: '100vw',
+            height: '100vh',
+            position: 'relative',
+            zIndex: '1'
           }}
         >
           <Video updateTime={this.updatePlayerTime} />
@@ -36,14 +34,27 @@ class App extends Component {
 
         <div
           style={{
-            flex: '1',
-            minWidth: '35%',
-            position: 'relative',
-            padding: '90px'
+            position: 'absolute',
+            zIndex: '2',
+            width: '20vw',
+            height: '20vw',
+            top: '1rem',
+            left: '1rem'
           }}
         >
           <Map currentTime={this.state.playerTime} />
+        </div>
 
+        <div
+          style={{
+            position: 'absolute',
+            zIndex: '2',
+            width: '20vw',
+            height: '20vw',
+            bottom: '4rem',
+            left: '1rem'
+          }}
+        >
           <Infobox currentTime={this.state.playerTime} />
         </div>
       </div>
