@@ -10,34 +10,12 @@ class Map extends Component {
   constructor(props) {
     super(props);
 
-    this.incrementBearing = this.incrementBearing.bind(this);
-
     this.state = {
       lat: '40.7506',
       long: '-73.9874',
       zoom: '10',
       defaultData: true,
-      bearing: 0,
-      bearingInterval: null
     };
-  }
-
-  incrementBearing() {
-    const newBearing = this.state.bearing === 0 ? 180 : 0;
-
-    this.setState({
-      bearing: newBearing
-    });
-  }
-
-  componentDidMount() {
-    this.setState({
-      bearingInterval: setInterval(this.incrementBearing, 2000)
-    });
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.state.bearingInterval);
   }
 
   static getDerivedStateFromProps(nextProps) {
@@ -61,16 +39,9 @@ class Map extends Component {
   render() {
     return (
       <Mapbox
-        style='mapbox://styles/mapbox/streets-v9'
+        style='mapbox://styles/ehmorris/cjgfva823000h2rpdryitqsk7'
         center={[this.state.long, this.state.lat]}
         zoom={[this.state.zoom]}
-        pitch={[40]}
-        bearing={[this.state.bearing]}
-        movingMethod='easeTo'
-        animationOptions={{
-          duration: 2000,
-          easing: (num) => num
-        }}
         containerStyle={{
           width: '100%',
           height: '100%'

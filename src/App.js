@@ -36,8 +36,8 @@ class App extends Component {
           style={{
             position: 'absolute',
             zIndex: '2',
-            width: '20vw',
-            height: '20vw',
+            width: '30vw',
+            height: '30vw',
             top: '1rem',
             left: '1rem'
           }}
@@ -49,8 +49,8 @@ class App extends Component {
           style={{
             position: 'absolute',
             zIndex: '2',
-            width: '20vw',
-            height: '20vw',
+            width: '30vw',
+            height: '30vw',
             top: '1rem',
             right: '1rem'
           }}
