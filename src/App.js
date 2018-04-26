@@ -20,13 +20,18 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div
+        style={{
+          perspective: '1000px'
+        }}
+      >
         <div
           style={{
             width: '100vw',
             height: '100vh',
             position: 'relative',
-            zIndex: '1'
+            zIndex: '1',
+            transform: 'translate3D(0, 0, -60px) rotate3d(0, 1, 0, -40deg)'
           }}
         >
           <Video updateTime={this.updatePlayerTime} />
@@ -36,10 +41,11 @@ class App extends Component {
           style={{
             position: 'absolute',
             zIndex: '2',
-            width: '30vw',
-            height: '30vw',
-            top: '1rem',
-            left: '1rem'
+            width: '40vw',
+            height: '40vw',
+            top: '50%',
+            left: '0',
+            transform: 'translate3D(0, -50%, -20px) rotate3d(0, 1, 0, 40deg)'
           }}
         >
           <Map currentTime={this.state.playerTime} />
@@ -51,8 +57,9 @@ class App extends Component {
             zIndex: '2',
             width: '30vw',
             height: '30vw',
-            top: '1rem',
-            right: '1rem'
+            top: '50%',
+            right: '0',
+            transform: 'translate3D(0, 0, -160px) rotate3d(0, 1, 0, -40deg)'
           }}
         >
           <Infobox currentTime={this.state.playerTime} />

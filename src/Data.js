@@ -6,7 +6,7 @@ const Data = [
     desc: '',
     lat: 40.689232,
     long: -74.044542,
-    zoom: 14
+    zoom: 17
   },
   {
     startTime: 19.5,
@@ -24,7 +24,7 @@ const Data = [
     desc: 'This statue has been moved many times, but in this video you can see him facing towards Battery Park, with the Chesebrough Building in the background https://(desc of statue www.nycgovparks.org/parks/battery-park/monuments/454) (older http://dcmny.org/islandora/object/nyhs%3A1782) (showing Chesebrough Building https://digitalcollections.nypl.org/items/510d47dd-579a-a3d9-e040-e00a18064a99) (kiosk and park and likely statue visible https://digitalcollections.nypl.org/items/510d47dd-2197-a3d9-e040-e00a18064a99)',
     lat: 40.702627,
     long: -74.015365,
-    zoom: 14
+    zoom: 16
   },
   {
     startTime: 210.8,
@@ -42,7 +42,7 @@ const Data = [
     desc: 'New York Herald Building, formerly the 71st Regiment Armory (nice rundown http://daytoninmanhattan.blogspot.com/2012/11/the-lost-new-york-herald-building.html)',
     lat: 40.750638,
     long: -73.987473,
-    zoom: 14
+    zoom: 16
   },
   {
     startTime: 384.8,
@@ -51,7 +51,7 @@ const Data = [
     desc: '',
     lat: 40.741711,
     long: -73.989630,
-    zoom: 14
+    zoom: 16
   },
   {
     startTime: 409,
@@ -60,7 +60,7 @@ const Data = [
     desc: '',
     lat: 40.731682,
     long: -73.991512,
-    zoom: 14
+    zoom: 16
   },
   {
     startTime: 497.2,
@@ -69,7 +69,7 @@ const Data = [
     desc: 'From top of Flatiron Building. Visible on the left is the then-new Fifth Avenue Building, and in the distance, the Croisic Building, which was just finishing construction.',
     lat: 40.742409,
     long: -73.989052,
-    zoom: 14
+    zoom: 16
   }
 ];
 
