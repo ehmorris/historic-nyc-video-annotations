@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Data from './Data';
+import Styles from './Styles/Infobox.css';
 
 class Infobox extends Component {
   constructor(props) {
@@ -32,16 +33,7 @@ class Infobox extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          background: '#fff',
-          border: '2px solid #000',
-          padding: '1rem',
-          width: '100%',
-          boxSizing: 'border-box',
-          height: '100%'
-        }}
-      >
+      <div className={Styles.Infobox}>
         <div>{this.props.currentTime}</div>
         <div>
           <div>{this.state.title}</div>

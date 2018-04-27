@@ -1,0 +1,7 @@
+.Video {
+  height: 100vh;
+  position: relative;
+  transform: translate3D(0, 0, -60px) rotate3d(0, 1, 0, -40deg);
+  width: 100vw;
+  z-index: 1;
+}

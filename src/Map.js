@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import Data from './Data';
+import Styles from './Styles/Map.css';
 
 const Mapbox = ReactMapboxGl({
   accessToken: process.env.REACT_APP_MAPBOX_TOKEN
@@ -38,28 +39,30 @@ class Map extends Component {
 
   render() {
     return (
-      <Mapbox
-        style='mapbox://styles/ehmorris/cjgfva823000h2rpdryitqsk7'
-        center={[this.state.long, this.state.lat]}
-        zoom={[this.state.zoom]}
-        containerStyle={{
-          width: '100%',
-          height: '100%'
-        }}
-      >
-        <Layer
-          type='circle'
-          paint={{
-            'circle-color': '#ff0000',
-            'circle-radius': 6,
-            'circle-pitch-alignment': 'map'
+      <div className={Styles.Map}>
+        <Mapbox
+          style='mapbox://styles/ehmorris/cjgfva823000h2rpdryitqsk7'
+          center={[this.state.long, this.state.lat]}
+          zoom={[this.state.zoom]}
+          containerStyle={{
+            width: '100%',
+            height: '100%'
           }}
         >
-          {!this.state.defaultData &&
-            <Feature coordinates={[this.state.long, this.state.lat]} />
-          }
-        </Layer>
-      </Mapbox>
+          <Layer
+            type='circle'
+            paint={{
+              'circle-color': '#ff0000',
+              'circle-radius': 6,
+              'circle-pitch-alignment': 'map'
+            }}
+          >
+            {!this.state.defaultData &&
+              <Feature coordinates={[this.state.long, this.state.lat]} />
+            }
+          </Layer>
+        </Mapbox>
+      </div>
     );
   }
 }

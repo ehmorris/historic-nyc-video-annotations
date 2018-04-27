@@ -1,0 +1,9 @@
+.Map {
+  height: 40vw;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate3D(0, -50%, -20px) rotate3d(0, 1, 0, 40deg);
+  width: 40vw;
+  z-index: 2;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
+import Styles from './Styles/Video.css';
 
 class Video extends Component {
   constructor(props) {
@@ -48,11 +49,13 @@ class Video extends Component {
 
   render() {
     return (
-      <YouTube
-        videoId={'sm1rWpJ-FBA'}
-        opts={this.playerOptions}
-        onStateChange={this.handleStateChange}
-      />
+      <div className={Styles.Video}>
+        <YouTube
+          videoId={'sm1rWpJ-FBA'}
+          opts={this.playerOptions}
+          onStateChange={this.handleStateChange}
+        />
+      </div>
     );
   }
 }
