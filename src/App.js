@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import {Helmet} from 'react-helmet';
 import Map from './Map';
 import Video from './Video';
 import Infobox from './Infobox';
-import Styles from './Styles/Container.css';
+import Styles from './Styles/Base.css';
 
 class App extends Component {
   constructor(props) {
@@ -21,10 +22,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className={Styles.Container}>
+      <div>
         <Video updateTime={this.updatePlayerTime} />
         <Map currentTime={this.state.playerTime} />
         <Infobox currentTime={this.state.playerTime} />
+
+        <Helmet>
+          <body className={Styles.Base} />
+        </Helmet>
       </div>
     );
   }
