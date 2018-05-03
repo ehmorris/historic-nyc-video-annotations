@@ -21,7 +21,8 @@ const Data = [
     startTime: 163.68,
     endTime: 172.60,
     title: 'Battery Park, Statue of John Ericsson',
-    desc: 'This statue has been moved many times, but in this video you can see him facing towards Battery Park, with the Chesebrough Building in the background https://(desc of statue www.nycgovparks.org/parks/battery-park/monuments/454) (older http://dcmny.org/islandora/object/nyhs%3A1782) (showing Chesebrough Building https://digitalcollections.nypl.org/items/510d47dd-579a-a3d9-e040-e00a18064a99) (kiosk and park and likely statue visible https://digitalcollections.nypl.org/items/510d47dd-2197-a3d9-e040-e00a18064a99)',
+    desc: 'This statue has been moved many times, but in this video you can see him facing towards Battery Park, with the Chesebrough Building in the background.',
+
     lat: 40.702627,
     long: -74.015365,
     zoom: 16
