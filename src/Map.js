@@ -41,7 +41,7 @@ class Map extends Component {
     return (
       <div className={Styles.Map}>
         <Mapbox
-          style='mapbox://styles/ehmorris/cjgfva823000h2rpdryitqsk7'
+          style='mapbox://styles/ehmorris/cjgs8n2lv00162rlby0q0b66n'
           center={[this.state.long, this.state.lat]}
           zoom={[this.state.zoom]}
           containerStyle={{
@@ -52,8 +52,10 @@ class Map extends Component {
           <Layer
             type='circle'
             paint={{
-              'circle-color': '#ff0000',
-              'circle-radius': 6,
+              'circle-stroke-width': 4,
+              'circle-stroke-color': '#ff0000',
+              'circle-opacity': 0,
+              'circle-radius': 26,
               'circle-pitch-alignment': 'map'
             }}
           >
