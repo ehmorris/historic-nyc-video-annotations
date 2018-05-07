@@ -33,10 +33,9 @@ class Infobox extends Component {
 
   render() {
     return (
-      <div className={Styles.Infobox}>
-        <div>{this.props.currentTime}</div>
-        <div>
-          <div>{this.state.title}</div>
+      <div className={Styles.Container}>
+        <div className={Styles.Content}>
+          <div className={Styles.Title}>{this.state.title}</div>
           <div>{this.state.desc}</div>
         </div>
       </div>
