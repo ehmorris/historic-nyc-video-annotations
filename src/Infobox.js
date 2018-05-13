@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Data from './Data';
+import DataMarkup from './DataMarkup';
 import Styles from './Styles/Infobox.css';
 
 class Infobox extends Component {
@@ -7,8 +8,7 @@ class Infobox extends Component {
     super(props);
 
     this.state = {
-      title: '',
-      desc: '',
+      id: 'Blank'
     };
   }
 
@@ -20,23 +20,22 @@ class Infobox extends Component {
 
     if (newData) {
       return {
-        title: newData.title,
-        desc: newData.desc
+        id: newData.id
       };
     } else {
       return {
-        title: '',
-        desc: ''
+        id: 'Blank'
       };
     }
   }
 
   render() {
+    const DataThing = DataMarkup[this.state.id];
+
     return (
       <div className={Styles.Container}>
         <div className={Styles.Content}>
-          <div className={Styles.Title}>{this.state.title}</div>
-          <div>{this.state.desc}</div>
+          <DataThing />
         </div>
       </div>
     );

@@ -20,9 +20,7 @@ const Data = [
   {
     startTime: 163.68,
     endTime: 172.60,
-    title: 'Battery Park, Statue of John Ericsson',
-    desc: 'This statue has been moved many times, but in this video you can see him facing towards Battery Park, with the Chesebrough Building in the background.',
-
+    id: 'JohnEricsson',
     lat: 40.702627,
     long: -74.015365,
     zoom: 16
