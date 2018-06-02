@@ -30,12 +30,12 @@ class Infobox extends Component {
   }
 
   render() {
-    const DataThing = DataMarkup[this.state.id];
+    const Markup = DataMarkup[this.state.id];
 
     return (
       <div className={Styles.Container}>
         <div className={Styles.Content}>
-          <DataThing />
+          <Markup />
         </div>
       </div>
     );

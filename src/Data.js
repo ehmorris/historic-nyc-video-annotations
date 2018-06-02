@@ -28,8 +28,7 @@ const Data = [
   {
     startTime: 210.8,
     endTime: 260.36,
-    title: 'Brooklyn Bridge',
-    desc: 'The Brooklyn Bridge used to carry trollies, trains, cars, and pedestrians',
+    id: 'BrooklynBridge',
     lat: 40.706015,
     long: -73.996754,
     zoom: 14
